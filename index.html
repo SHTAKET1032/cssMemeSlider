@@ -10,86 +10,90 @@
     <title>Mem-Slider</title>
 </head>
 <body>
-    <div class="wrapper">
+<div class="wrapper">
 
-        <header class="header">
+    <header class="header">
 
-            <div class="container">
+        <div class="container">
 
-                <h1 class="main-title">MEM_SLIDER</h1>
-
-            </div>
-
-        </header>
-
-        <div class="main">
-
-            <div class="container">
-
-                <div class="slider">
-
-                    <div class="slider__window">
-
-                        <div class="slider__track active">
-
-                            <div class="slide"><img class="slide__img" src="img/1.webp" alt="img1"></div>
-
-                            <div class="slide"><img class="slide__img" src="img/2.jpeg" alt="img2"></div>
-
-                            <div class="slide"><img class="slide__img" src="img/3.jpeg" alt="img3"></div>
-
-                            <div class="slide"><img class="slide__img" src="img/4.jpeg" alt="img4"></div>
-
-                            <div class="slide"><img class="slide__img" src="img/5.jpeg" alt="img5"></div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="subslider">
-
-                        <div class="descr">
-
-                            <p class="txt">TXT TXT TXT</p>
-
-                        </div>
-
-                        <div class="controls-box">
-
-                            <input class="control" type="radio" id="control1" name="slider-controls" checked>
-                            <label for="control1"></label>
-
-                            <input class="control" type="radio" id="control2" name="slider-controls">
-                            <label for="control2"></label>
-
-                            <input class="control" type="radio" id="control3" name="slider-controls">
-                            <label for="control3"></label>
-
-                            <input class="control" type="radio" id="control4" name="slider-controls">
-                            <label for="control4"></label>
-
-                            <input class="control" type="radio" id="control5" name="slider-controls">
-                            <label for="control5"></label>
-
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
+            <h1 class="main-title">MEM_SLIDER</h1>
 
         </div>
 
-        <footer class="footer">
+    </header>
 
-            <div class="container">
-
+    <main>
+        <div class="container">
+            <div class="slider">
+                <input class="control" type="radio" name="mem-slider" id="control1" checked>
+                <input class="control" type="radio" name="mem-slider" id="control2">
+                <input class="control" type="radio" name="mem-slider" id="control3">
+                <input class="control" type="radio" name="mem-slider" id="control4">
+                <input class="control" type="radio" name="mem-slider" id="control5">
+                <div class="slider__window">
+                    <ul class="slider__track">
+                        <li class="slide">
+                            <img src="img/1.webp" alt="1" class="slide__img">
+                        </li>
+                        <li  class="slide">
+                            <img src="img/2.jpeg" alt="2" class="slide__img second-img">
+                        </li>
+                        <li class="slide">
+                            <img src="img/3.jpeg" alt="3" class="slide__img">
+                        </li>
+                        <li  class="slide">
+                            <img src="img/4.jpeg" alt="4" class="slide__img">
+                        </li>
+                        <li  class="slide">
+                            <img src="img/5.jpeg" alt="5" class="slide__img">
+                        </li>
+                    </ul>
+                </div>
+                <ul class="slider__nav">
+                    <li>
+                        <label for="control1">
+                            <span class="slider__nav-btn"></span>
+                        </label>
+                    </li>
+                    <li>
+                        <label for="control2">
+                            <span class="slider__nav-btn"></span>
+                        </label>
+                    </li>
+                    <li>
+                        <label for="control3">
+                            <span class="slider__nav-btn"></span>
+                        </label>
+                    </li>
+                    <li>
+                        <label for="control4">
+                            <span class="slider__nav-btn"></span>
+                        </label>
+                    </li>
+                    <li>
+                        <label for="control5">
+                            <span class="slider__nav-btn"></span>
+                        </label>
+                    </li>
+                </ul>
+                <div class="description__container">
+                    <ul class="description">
+                        <li class="description__item">First</li>
+                        <li class="description__item">Second</li>
+                        <li class="description__item">Third</li>
+                        <li class="description__item">Fourth</li>
+                        <li class="description__item">Fifth</li>
+                    </ul>
+                </div>
             </div>
+        </div>
+    </main>
 
-        </footer>
+    <footer>
 
-    </div>
+        <div class="container"></div>
+
+    </footer>
+</div>
 </body>
 </html>

@@ -3,13 +3,14 @@ body{
 }
 
 .wrapper{
+    padding: 1rem 0;
     min-height: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .container {
-    max-width: 1440px;
+    /*max-width: 1440px;*/
     margin: 0 auto;
     padding: 0 2rem;
 
@@ -19,6 +20,7 @@ body{
     flex-grow: 1;
 }
 
+
 .slider{
     padding: 5rem 0 0 0;
     display: flex;
@@ -27,23 +29,25 @@ body{
 }
 
 .slider__window{
-    width: 50%;
-    /*height: 70rem;*/
+    width: 40%;
+    margin-bottom: 2rem;
     overflow: hidden;
     border: 0.5rem solid black;
     border-radius: 10%;
 }
 
 .slider__track{
-    width: 500%;
-    height: 100%;
+    width: 100%;
     display: flex;
-    /*column-gap: 30px;*/
+    transition: transform .6s ease-in-out;
 }
 
 .slide{
-    width: 20%;
-    transition: all 600ms ease;
+    width: 100%;
+    min-width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .slide__img{
@@ -51,43 +55,132 @@ body{
     height: 100%;
 }
 
-.subslider{
-    padding: 5rem 0 0 0;
-    width: 50%;
-    display: flex;
-    justify-content: space-between;
-}
+
 
 .control{
+    display: none;
+}
+
+.controls-box{
+    display: flex;
+}
+
+.slider__nav{
+    display: flex;
+    align-self: end;
+}
+
+.slider__nav-btn{
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: black;
+    margin: 0 1rem;
     cursor: pointer;
-    margin: 0 0.3rem;
 }
 
-.control:hover{
-  transform: scale(110%);
+label{
+    padding: 1rem;
+    display: block;
+    cursor: pointer;
+    transition: transfrom 0.6s ease-in-out;
+}
+
+label:active {
+    transform: scale(1.5);
+}
+
+.description__container{
+    align-self: start;
+    overflow: hidden;
+}
+
+.description {
+    display: flex;
+    transition: transform .6s ease-in-out;
+}
+
+.description__item {
+    width: 100%;
+    min-width: 100%;
+    font-size: 3rem;
+    color: black;
 }
 
 
-.slider__track.active {
-    margin-left: 0;
+.slider__nav label:hover .slider__nav-btn {
+    border-color: #1E90FF;
+    box-shadow: 0 0 10px 0 purple inset, 0 0 10px 4px purple;
+    background-color: silver;
 }
 
-#control1:checked ~ .slider__track .active{
-    margin-left: 0;
+#control1:checked ~ .slider__nav [for="control1"] .slider__nav-btn,
+#control2:checked ~ .slider__nav [for="control2"] .slider__nav-btn,
+#control3:checked ~ .slider__nav [for="control3"] .slider__nav-btn,
+#control4:checked ~ .slider__nav [for="control4"] .slider__nav-btn,
+#control5:checked ~ .slider__nav [for="control5"] .slider__nav-btn {
+    background-color: white;
 }
 
-#control2:checked ~ .slide .active{
-    margin-left: -100%;
+
+
+
+#control1:checked ~ .slider__window .slider__track,
+#control1:checked ~ .description__container .description{
+    transform: translateX(0%)
 }
 
-#control3:checked ~ .slider__track .active{
-    margin-left: -200%;
+#control2:checked ~ .slider__window .slider__track,
+#control2:checked ~ .description__container .description{
+    transform: translateX(-100%)
 }
 
-#control4:checked ~ .slider__track .active{
-    margin-left: -300%;
+#control3:checked ~ .slider__window .slider__track,
+#control3:checked ~ .description__container .description{
+    transform: translateX(-200%)
 }
 
-#control5:checked ~ .slider__track .active{
-    margin-left: -400%;
+#control4:checked ~ .slider__window .slider__track,
+#control4:checked ~ .description__container .description{
+    transform: translateX(-300%)
 }
+
+#control5:checked ~ .slider__window .slider__track,
+#control5:checked ~ .description__container .description{
+    transform: translateX(-400%)
+}
+
+
+
+@media screen and (max-width: 1440px) {
+  .slider__nav{
+    align-self: center;
+    }
+
+  .description__item{
+    text-align: center;
+    }
+
+  .slider__window{
+    width: 60%;
+  }
+
+  .slider__nav-btn {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0;
+}
+}
+
+@media screen and (max-width: 500px) {
+    .slider__window{
+        width: 70%;
+    }
+
+    .slider__nav-btn {
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
